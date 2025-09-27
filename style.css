@@ -717,26 +717,36 @@ span{
   background-color:  rgb(33, 189, 77);
   transition: all 0.3s ease;
 }
+/* Default (System / PC) */
+.nav-list li a {
+  font-size: 22px;   /* Big text on system */
+  font-weight: bold;
+  color: #fff;       /* default text color */
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
 
-/* --------------------------------------------------------------------------------
-   Media queries for mobile / tablet
--------------------------------------------------------------------------------- */
+/* Hover effect */
+.nav-list li a:hover {
+  color: #ffcc00;          /* changes color on hover */
+  border-bottom: 2px solid #ffcc00; /* underline effect */
+}
 
+/* Tablet (below 768px) */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    cursor: pointer;
   }
   .nav-menu {
     position: absolute;
     top: 70px; /* adjust according to header height */
     right: 0;
-    /* hidden by default on mobile */
     width: 100%;
-    background-color:#38813e;
-    max-height: 0;
+    background-color: #38813e;
+    max-height: 0; /* hidden by default */
     overflow: hidden;
     transition: max-height 0.3s ease;
-    
   }
   .nav-menu.active {
     max-height: 500px; /* enough to show all items */
@@ -748,11 +758,13 @@ span{
     padding: 1rem 0;
   }
   .nav-list li a {
-    font-size: 40px;
-    
+    font-size: 20px;  
+    font-weight: bold;
+    text-align: center;
   }
 }
 
+/* Phone (below 480px) */
 @media (max-width: 480px) {
   .header {
     padding: 0.8rem 1rem;
@@ -761,14 +773,15 @@ span{
     font-size: 1.5rem;
   }
   .nav-list li a {
-    font-size: 1.8rem;
-
-
+    font-size: 18px;  
+    font-weight: bold;
+    text-align: center;
   }
   .hamburger .bar {
     width: 20px;
     height: 2.5px;
   }
 }
+
 
 
